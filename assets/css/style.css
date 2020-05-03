@@ -43,6 +43,14 @@ table {
     box-sizing: border-box;
 }
 /* -----ここから下に記述してください----- */
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: europa,"Yu Gothic",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+}
+
 .header {
     position: fixed;
     width: 100%;
@@ -139,6 +147,14 @@ table {
     text-shadow: 10px 10px 5px #000 ;
 }
 
+.mainContent_inner {
+    max-width: 1080px;
+    margin: auto;
+    padding: 120px 0 0;
+}
+.mainContent_cat {
+    margin-bottom: 120px;
+}
 .mainContent_title {
     font-family: fantasy;
     position: relative;
@@ -146,6 +162,17 @@ table {
     font-weight: bold;
     text-align: center;
     margin-bottom: 60px;
+}
+
+.mainContent_title:after {
+    content: "";
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    border-bottom: 2px solid;
 }
 
 .introduction_cat {
@@ -240,6 +267,10 @@ table {
     right: 0;
     bottom: -100px;
     z-index: -1;
+}
+
+.application_area .mainContent_subTitle {
+    text-align: left;
 }
 
 .application_sentence p {
@@ -395,6 +426,113 @@ table {
     background: #555;
 }
 
+.faq-inner {
+    margin: 0 auto 100px;
+    padding: 60px 90px;
+    background-color: rgba(194,194,208,.1)
+}
+.faq-checkbox {
+    display: none;
+}
+.faq-label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 24px;
+    background-color: #fff;
+    font-size: 16px;
+    box-shadow: 0 10px 55px rgba(0,0,0,.05);
+    position: relative;
+}
+.faq-label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    background: url(../../assets/images/faq_off.svg) no-repeat 50%;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+}
+.faq-checkbox:checked + .faq-label::after {
+    background: url(../../assets/images/faq_on.svg) no-repeat 50%;
+    background-size: contain;
+}
+.faq-accordion {
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all 0.5s;
+}
+.faq-checkbox:checked + .faq-label + .faq-accordion {
+    max-height: 120px;
+    visibility: visible;
+}
+.faq-answer {
+    background-color: rgba(37,117,252,.8);
+    padding: 40px 24px 40px 3em;
+    color: #fff;
+    font-size: 16px;
+    text-indent: -1em;
+}
+[data-modal="trigger"] {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 24px;
+    color: #108de8;
+}
+[data-modal="trigger"]::after {
+    content: "忍者CODEを知る";
+}
+.modal-checkbox:checked ~ [data-modal="trigger"]::after {
+    content: "モーダルを閉じる";
+}
+.modal-checkbox:checked ~ [data-modal="trigger"] {
+    z-index: 1;
+    position: fixed;
+    bottom: 130px;
+}
+.faq-modal {
+    display: none;
+}
+.modal-checkbox:checked ~ .faq-modal {
+    display: block;
+}
+.faq-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.faq-modal_overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30,30,30,0.9);
+}
+.faq-modal_content {
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    height: 400px;
+    padding: 20px 30px;
+    background-color: #fff;
+}
+.faq-modal_content_title {
+    padding: 16px 0 32px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.modal-checkbox {
+    display: none;
+}
+
 .footer p {
     padding: 16px;
     font-size: .8rem;
@@ -408,31 +546,31 @@ table {
         font-size: 16px;
     }
     
-    .header__bg {
+    .header_bg {
         padding: 10px;
     }
-    .header__logo a {
+    .header_logo a {
         font-size: 1.2rem;
     }
     /* ヘッダーハンバーガーメニュー */
-    .header__cat input,
-    .header__cat label {
+    .header_cat input,
+    .header_cat label {
         display: block;
     }
-    .header__cat input {
+    .header_cat input {
         display: none;
     }
-    .header__cat label {
+    .header_cat label {
         position: absolute;
         right: 10px;
         clear: both;
     }
-    span.hamburger__icon {
+    span.hamburger_icon {
         display: inline-block;
         width: 35px;
         height: 25px;
     }
-    span.hamburger__icon i {
+    span.hamburger_icon i {
         position: absolute;
         width: 100%;
         height: 2px;
@@ -440,18 +578,18 @@ table {
         display: block;
         transition: all .3s ease-in-out;
     }
-    span.hamburger__icon i:nth-child(1) {
+    span.hamburger_icon i:nth-child(1) {
         top: 0;
     }
-    span.hamburger__icon i:nth-child(2) {
+    span.hamburger_icon i:nth-child(2) {
         margin: auto;
         top: 0;
         bottom: 0;
     }
-    span.hamburger__icon i:nth-child(3) {
+    span.hamburger_icon i:nth-child(3) {
         bottom: 0;
     }
-    .header__cat input:checked + label span.hamburger__icon i:nth-child(1) {
+    .header_cat input:checked + label span.hamburger_icon i:nth-child(1) {
         margin: auto;
         transform: rotate(45deg);
         right: 0;
@@ -459,24 +597,24 @@ table {
         left: 0;
         top: 0;
     }
-    .header__cat input:checked + label span.hamburger__icon i:nth-child(2) {
+    .header_cat input:checked + label span.hamburger_icon i:nth-child(2) {
         transform: rotateX(90deg);
         top: 0;
         bottom: 0;
     }
-    .header__cat input:checked + label span.hamburger__icon i:nth-child(3) {
+    .header_cat input:checked + label span.hamburger_icon i:nth-child(3) {
         margin: auto;
         transform: rotate(-45deg);
         top: 0;
         right: 0;
         bottom: 0;
     }
-    .header__cat input:checked ~ .header__navi {
+    .header_cat input:checked ~ .header_navi {
         z-index: 99;
         opacity: 1;
         transform: translateX(0);
     }
-    .header__navi {
+    .header_navi {
         position: fixed;
         opacity: 0;
         background-color: rgba(255, 255, 255, 0.7);
@@ -488,7 +626,7 @@ table {
         z-index: -1;
         transition: all 1s ease-out;
     }
-    .header__navi__wrap {
+    .header_navi_wrap {
         width: 100%;
         background-color: #fff;
         position: absolute;
@@ -499,18 +637,22 @@ table {
         transition-property: right;
         overflow-y: scroll;
     }
-    .header__cat input:checked ~ .header__navi .header__navi__wrap {
+    .header_cat input:checked ~ .header_navi .header_navi_wrap {
         right: 0;
     }
-    .header__navi__list {
+    .header_navi_list {
         margin: 0;
         display: block;
         justify-content: inherit;
+        
     }
-    .header__navi__item {
+
+    .header_navi_item {
         border-bottom: 1px solid #000;
+        
     }
-    .header__navi__item a {
+
+    .header_navi_item a {
         padding: 0 50px;
         color: #000;
         font-size: 24px;
@@ -523,86 +665,107 @@ table {
         line-height: 1;
         transition: background-color .3s ease-in-out;
     }
-    .mainKv__wrap {
+    .mainKv_wrap {
         height: 100vh;
         background-position: center right -200px;
     }
-    .mainKv__title {
+    .mainKv_title {
         width: 100%;
         text-align: center;
     }
-    .mainKv__title h1 {
+    .mainKv_title h1 {
         font-size: 2.6rem;
     }
     /* メインコンテンツ */
-    .mainContent__cat {
+    .mainContent_cat {
         margin-bottom: 60px;
     }
-    .mainContent__inner {
+    .mainContent_inner {
         padding: 60px 24px 0;
     }
-    .concept__cat {
+    .introduction_cat {
         display: block;
     }
-    .concept__img {
+    .introduction_img {
         width: 100%;
         margin-bottom: 30px;
     }
-    .concept__text {
+    .introduction_text {
         width: 100%;
         height: 400px;
     }
-    .application__cat {
+    .application_cat {
         display: block;
     }
-    .application__img {
+    .application_img {
         width: 100%;
     }
-    .application__img__bg {
+    .application_img_bg {
         height: 500px;
     }
-    .application__area {
+    .application_area {
         width: 100%;
     }
-    .application__area__inner {
+    .application_area_inner {
         padding: 30px 24px;
         background-color: #f4f4f4;
     }
-    .application__area__inner::before {
+    .application_area_inner::before {
         content: none;
     }
-    .application__area .mainContent__subTitle {
+    .application_area .mainContent_subTitle {
         text-align: center;
     }
-    .application.mainContent__cat {
+    .application.mainContent_cat {
         margin-bottom: 60px;
     }
-    .gallery__container {
+    .gallery_container {
         padding: 30px;
         width: auto;
         height: calc(100% - 60px);
     }
-    .card__wrap {
+    .card_wrap {
         display: block;
         padding: 0 24px;
     }
-    .card__list {
+    .card_list {
         width: 100%;
         padding-right: 0;
     }
-    .card__list:nth-child(n+4) {
+    .card_list:nth-child(n+4) {
         margin-bottom: 48px;
     }
-    .card__title {
+    .card_title {
         font-size: 1.3rem;
     }
-    .card__img img  {
+    .card_img img  {
         height: 500px;
     }
-    .contact .mainContent__inner {
+    .contact .mainContent_inner {
         padding: 0 24px;
     }
-    .contact__btn {
+    .contact_btn {
         margin: 60px auto;
+    }
+
+    .faq-inner {
+        padding: 20px 30px;
+    }
+    .faq-label {
+        padding: 24px 36px 24px 24px;
+    }
+    .faq-label::after {
+        right: 16px;
+        width: 18px;
+        height: 18px;
+    }
+    .faq-checkbox:checked + .faq-label + .faq-accordion {
+        max-height: 224px;
+    }
+    .modal-checkbox:checked ~ [data-modal="trigger"] {
+        bottom: 72px;
+    }
+    .faq-modal__content {
+        overflow-y: auto;
     }
 }
