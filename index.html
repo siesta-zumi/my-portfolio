@@ -202,17 +202,77 @@
             </div>
         </section>
 
-        
+        <section class="contact mainContent_cat">
+            <h2 class="mainContent_title" id="contact">Contact</h2>
+            <div class="contact_cat">
+                <div class="mainContent_inner">
+                    <form name="contact" id="valForm">
+                        <dl class="contact_item">
+                            <dt><label for="name" class="contact_label">Name</label></dt>
+                            <dd><input type="text" name="name" id="name" placeholder="example： Hattori Hanzo" value=""></dd>
+                        </dl>
+                        <dl class="contact_item">
+                            <dt><label for="mail" class="contact_label">Mail</label></dt>
+                            <dd><input type="email" name="mail" id="mail" placeholder="example：ninnin@example.com" value=""></dd>
+                        </dl>
+                        <dl class="contact_item">
+                            <dt><label for="tel" class="contact_label">Tel</label></dt>
+                            <dd><input type="tel" name="tel" id="tel" placeholder="example：09001234567" value=""></dd>
+                        </dl>
+                        <dl class="contact_item">
+                            <dt><label for="textarea">Contacts</label></dt>
+                            <dd><textarea name="textarea" id="textarea" placeholder="Please enter your inquiry" cols="30" rows="10" value=""></textarea></dd>
+                        </dl>
+                        <button class="contact_btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
         
     </section>
 
 
 </main>
 
+<footer class="footer">
+    <p>Yasutaka Imaizumi. ALL RIGHTS RESERVED.</p>
+</footer>
+
     
-    <!-- scriptエリア -->
+    
+
     <!-- jquery cdn読み込み -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        $(function() {
+       
+        let runScroll = function() {
+            $('a[href^="#"]').click(function() {
+                let speed = 400;
+                let href = $(this).attr("href");
+                let $target = $(href == "#" || href == "" ? 'html' : href);
+                let position = $target.offset().top - 100;
+                $('body,html').animate({
+                    scrollTop: position
+                }, speed, 'swing');
+                return false;
+            });
+        };
+       
+        let unlockCheckBox = function() {
+            let $trigger = $('.header_navi a');
+            let $target = $('input[type="checkbox"]');
+            $trigger.click(function() {
+                $target.prop('checked', false);
+            });
+        };
+      
+            runScroll();
+            unlockCheckBox();
+        });
+    </script>
 </body>
 
 </html>

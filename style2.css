@@ -43,50 +43,54 @@ table {
     box-sizing: border-box;
 }
 /* -----ここから下に記述してください----- */
+
+
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: europa,"Yu Gothic",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+}
+
+/* ヘッダーStyle */
 .header {
     position: fixed;
     width: 100%;
-    top: 0;
     left: 0;
+    top: 0;
     z-index: 1000;
-    background-color:rgb(000,0000,000,.5);
+    background-color: rgb(000,000,000,.5);
 }
-
-.header_bg {
+.header__bg {
     position: relative;
     z-index: 2;
     padding: 30px;
 }
-
-.header_logo a {
+.header__logo a {
     font-family: cursive;
     display: block;
     text-decoration: none;
     font-size: 1.5rem;
     color: #fff;
 }
-
-.header_cat {
+.header__cat {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
-
-.header_cat input,
-.header_cat_label {
+.header__cat input,
+.header__cat label {
     display: none;
 }
-
-.header_navi_list {
+.header__navi__list {
     display: flex;
 }
-
-.header_navi_item span {
+.header__navi__item span {
     position: relative;
 }
-
-.header_navi_item span:after {
+.header__navi__item span:after {
     content: "";
     position: absolute;
     bottom: -10px;
@@ -96,50 +100,54 @@ table {
     background: #fff;
     opacity: 0;
     transition: all .8s cubic-bezier(.19,1,.22,1);
-    transition-timing-function:cubic-bezier(.19,1,.22,1);
+    transition-timing-function: cubic-bezier(.19,1,.22,1);
 }
-
-.header_navi_item:hover span:after {
+.header__navi__item:hover span:after {
     opacity: 1;
     left: 0;
     width: 100%;
 }
-
-.header_navi a {
+.header__navi a {
     text-decoration: none;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 1rem;
     color: #fff;
 }
-
 .mainKv {
     position: relative;
-    background-image: url(../../assets/images/mainkv.jpg);
-    background-size: contain;
-    background-position: center;
+    background-image: url(../../assets/images/kv.jpg);
+    background-position: center right;
     background-repeat: no-repeat;
     width: 100%;
     height: 80vh;
     min-height: 660px;
-    margin-top: 100px;
 }
-
-.mainKv_title {
+.mainKv__title {
     position: absolute;
     top: 50%;
     left: 50%;
-    font-weight: bold;
     transform: translate(-50%, -50%);
+}
+.mainKv__title {
     font-family: fantasy;
     font-size: 3rem;
+    font-weight: bold;
     color: #fff;
-    background-color: rgb(000,000,000,.5);
-    padding: 20px;
-    text-shadow: 10px 10px 5px #000 ;
+    text-shadow: 10px 10px 5px #000;
 }
 
-.mainContent_title {
+
+/* メインコンテンツ */
+.mainContent__inner {
+    max-width: 1080px;
+    margin: auto;
+    padding: 120px 0 0;
+}
+.mainContent__cat {
+    margin-bottom: 120px;
+}
+.mainContent__title {
     font-family: fantasy;
     position: relative;
     font-size: 1.8rem;
@@ -147,37 +155,40 @@ table {
     text-align: center;
     margin-bottom: 60px;
 }
-
-.introduction_cat {
+.mainContent__title:after {
+    content: "";
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    border-bottom: 2px solid;
+}
+.concept__cat {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-.introduction_img {
+.concept__img {
     width: calc(50% - 40px);
 }
-
-.introduction_img>img {
-    width: 100%;
+.concept__img > img {
+    width: 100%;;
 }
-
-.introduction_text {
+.concept__text {
     width: calc(50% - 40px);
     height: 630px;
-    overflow: auto;
+    overflow-y: auto;
 }
-
-.mainContent_subTitle {
+.mainContent__subTitle {
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 24px;
 }
-
-
-.mainContent_subTitle::before,
-.mainContent_subTitle::after {
+.mainContent__subTitle::before,
+.mainContent__subTitle::after {
     display: inline-block;
     content: "";
     vertical-align: 5px;
@@ -185,31 +196,27 @@ table {
     height: 2px;
     background-color: #000;
 }
-.mainContent_subTitle::before {
+.mainContent__subTitle::before {
     margin-right: 8px;
 }
-.mainContent_subTitle::after {
+.mainContent__subTitle::after {
     margin-left: 8px;
 }
-.introduction_sentence p {
+.concept__sentence p {
     margin-bottom: 16px;
 }
-
-.application.mainContent_cat {
+.application.mainContent__cat {
     margin-bottom: 240px;
 }
-
-.application_cat {
+.application__cat {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
 }
-
-.application_img {
+.application__img {
     width: 60%;
 }
-
-.application_img_bg {
+.application__img__bg {
     background-image: url(../../assets/images/main_02.jpg);
     width: 100%;
     height: 580px;
@@ -219,19 +226,15 @@ table {
     overflow-x: hidden;
     position: relative;
     display: inline-block;
-    
 }
-
-.application_area {
+.application__area {
     width: 40%;
 }
-
-.application_area_inner {
+.application__area__inner {
     padding-left: 60px;
     position: relative;
 }
-
-.application_area_inner::before {
+.application__area__inner::before {
     width: calc(100% + 200px);
     content: "";
     position: absolute;
@@ -241,17 +244,17 @@ table {
     bottom: -100px;
     z-index: -1;
 }
-
-.application_sentence p {
+.application__area .mainContent__subTitle {
+    text-align: left;
+}
+.application__sentence p {
     line-height: 2;
 }
-
-.application_sentence p:first-letter {
+.application__sentence p:first-letter{
     font-weight: bold;
     font-size: 1.2rem;
 }
-
-.gallery_cat {
+.gallery__cat {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -260,80 +263,66 @@ table {
     position: relative;
     background-image: url(../../assets/images/main_03.jpg);
 }
-
-.gallery_mask {
+.gallery__mask {
     height: 100%;
     width: 100%;
     background: rgba(255,255,255,0.6);
 }
-
-.gallery_container {
+.gallery__container {
     padding: 70px 0;
     width: 70%;
     margin: auto;
 }
-
-.gallery_sentence {
+.gallery__sentence {
     line-height: 2;
     font-weight: bold;
     word-break: break-all;
 }
-
-
-.card .mainContent_inner {
-    max-width: 1450px;
+.card .mainContent__inner {
+    max-width: 1280px;
     padding: 0;
 }
-
-.contact .mainContent_inner {
+.contact .mainContent__inner {
     padding: 0;
 }
-
-.card_wrap {
+.card__wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
 }
-
-.card_list {
+.card__list {
     width: calc((100% / 3) - 16px);
     padding-right: 16px;
     margin-bottom: 60px;
 }
-
-.card_list:nth-child(3n) {
+.card__list:nth-child(3n) {
     padding-right: 0;
 }
-
-.card_list:nth-child(n+4) {
+.card__list:nth-child(n+4) {
     margin-bottom: 0;
 }
-
-.card_title {
+.card__title {
     font-size: 1.1rem;
     margin-bottom: 16px;
 }
-
-.card_img {
+.card__img {
     margin-bottom: 16px;border: 2px solid;
 }
 
-.card_img img {
+.card__img img {
     display: block;
     width: 100%;
     height: 600px;
     padding: 4px;
     object-fit: cover;
 }
-
-.contact .contact_item {
+.contact .contact__item {
     margin-bottom: 40px;
 }
 .contact dt {
     margin-bottom: 8px;
 }
-.contact .contact_label:after {
+.contact .contact__label:after {
     content: "*";
     margin-left: 8px;
     color: red;
@@ -374,7 +363,7 @@ table {
 .contact textarea::placeholder {
     font-weight: normal;
 }
-.contact_btn {
+.contact__btn {
     cursor: pointer;
     background: #fff;
     color: #555;
@@ -390,11 +379,118 @@ table {
     height: 60px;
     border-radius: 3px;
 }
-.contact_btn:hover {
+.contact__btn:hover {
     color: #fff;
     background: #555;
 }
+.faq-inner {
+    margin: 0 auto 100px;
+    padding: 60px 90px;
+    background-color: rgba(194,194,208,.1)
+}
+.faq-checkbox {
+    display: none;
+}
+.faq-label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 24px;
+    background-color: #fff;
+    font-size: 16px;
+    box-shadow: 0 10px 55px rgba(0,0,0,.05);
+    position: relative;
+}
+.faq-label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    background: url(../../assets/images/faq_off.svg) no-repeat 50%;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+}
+.faq-checkbox:checked + .faq-label::after {
+    background: url(../../assets/images/faq_on.svg) no-repeat 50%;
+    background-size: contain;
+}
+.faq-accordion {
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all 0.5s;
+}
+.faq-checkbox:checked + .faq-label + .faq-accordion {
+    max-height: 120px;
+    visibility: visible;
+}
+.faq-answer {
+    background-color: rgba(37,117,252,.8);
+    padding: 40px 24px 40px 3em;
+    color: #fff;
+    font-size: 16px;
+    text-indent: -1em;
+}
+[data-modal="trigger"] {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 24px;
+    color: #108de8;
+}
+[data-modal="trigger"]::after {
+    content: "忍者CODEを知る";
+}
+.modal-checkbox:checked ~ [data-modal="trigger"]::after {
+    content: "モーダルを閉じる";
+}
+.modal-checkbox:checked ~ [data-modal="trigger"] {
+    z-index: 1;
+    position: fixed;
+    bottom: 130px;
+}
+.faq-modal {
+    display: none;
+}
+.modal-checkbox:checked ~ .faq-modal {
+    display: block;
+}
+.faq-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.faq-modal__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30,30,30,0.9);
+}
+.faq-modal__content {
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    height: 400px;
+    padding: 20px 30px;
+    background-color: #fff;
+}
+.faq-modal__content__title {
+    padding: 16px 0 32px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.modal-checkbox {
+    display: none;
+}
 
+/* フッター */
 .footer p {
     padding: 16px;
     font-size: .8rem;
@@ -407,13 +503,15 @@ table {
     html {
         font-size: 16px;
     }
-    
+
+    /* ヘッダー */
     .header__bg {
         padding: 10px;
     }
     .header__logo a {
         font-size: 1.2rem;
     }
+
     /* ヘッダーハンバーガーメニュー */
     .header__cat input,
     .header__cat label {
@@ -523,6 +621,7 @@ table {
         line-height: 1;
         transition: background-color .3s ease-in-out;
     }
+
     .mainKv__wrap {
         height: 100vh;
         background-position: center right -200px;
@@ -534,6 +633,7 @@ table {
     .mainKv__title h1 {
         font-size: 2.6rem;
     }
+
     /* メインコンテンツ */
     .mainContent__cat {
         margin-bottom: 60px;
@@ -604,5 +704,25 @@ table {
     }
     .contact__btn {
         margin: 60px auto;
+    }
+    .faq-inner {
+        padding: 20px 30px;
+    }
+    .faq-label {
+        padding: 24px 36px 24px 24px;
+    }
+    .faq-label::after {
+        right: 16px;
+        width: 18px;
+        height: 18px;
+    }
+    .faq-checkbox:checked + .faq-label + .faq-accordion {
+        max-height: 224px;
+    }
+    .modal-checkbox:checked ~ [data-modal="trigger"] {
+        bottom: 72px;
+    }
+    .faq-modal__content {
+        overflow-y: auto;
     }
 }
