@@ -137,3 +137,59 @@ table {
     padding: 20px;
     text-shadow: 10px 10px 5px #000 ;
 }
+
+.mainContent_title {
+    font-family: fantasy;
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.concept_cat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.concept_img {
+    width: calc(50% - 40px);
+}
+
+.concept_img>img {
+    width: 100%;
+}
+
+.concept_text {
+    width: calc(50% - 40px);
+    height: 630px;
+    overflow: auto;
+}
+
+.mainContent_subTitle {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+
+.mainContent_subTitle::before,
+.mainContent_subTitle::after {
+    display: inline-block;
+    content: "";
+    vertical-align: 5px;
+    width: 32px;
+    height: 2px;
+    background-color: #000;
+}
+.mainContent_subTitle::before {
+    margin-right: 8px;
+}
+.mainContent_subTitle::after {
+    margin-left: 8px;
+}
+.concept_sentence p {
+    margin-bottom: 16px;
+}
