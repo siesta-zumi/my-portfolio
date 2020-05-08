@@ -187,12 +187,13 @@
                                 <a href="https://siesta-zumi.github.io/sanpou-Home-Page/" target="_blank" rel="noopener noreferrer"><img src="./assets/images/sanpou.png" alt="三宝ホームページ"></a>
                             </div>
                             <div class="works_text">
-                                <p>The description of the works goes here.</p>
-                                <p>Again, here is the description of the works</p>
-                                <p>The description of the works goes here.</p>
-                                <p>Again, here is the description of the works</p>
+                                <p>プログラミングを学習して初めて作成したLPサイトです。</p>
+                                <p>友人が経営している会社をイメージして作成いたしました。</p>
+                                <p>使用言語：HTML ,CSS, JavaSCript</p>
+                                <p>完成した時友人に喜んで貰いたいという気持ちを込めて作成しています。</p>
                             </div>
                         </li>
+
                         <li class="works_list">
                             <h3 class="works_title">仮装ECサイト（FURIMA)</h3 class="works_title">
                             <div class="works_img">
@@ -366,38 +367,36 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
         $(function() {
-        let runScroll = function() {
-            $('a[href^="#"]').click(function() {
-                let speed = 400;
-                let href = $(this).attr("href");
-                let $target = $(href == "#" || href == "" ? 'html' : href);
-                let position = $target.offset().top - 100;
-                $('body,html').animate({
-                    scrollTop: position
-                }, speed, 'swing');
-                return false;
-            });
-        };
-       
-        let unlockCheckBox = function() {
-            let $trigger = $('.header_navi a');
-            let $target = $('input[type="checkbox"]');
-            $trigger.click(function() {
-                $target.prop('checked', false);
-            });
-        };
+            let runScroll = function() {
+                $('a[href^="#"]').click(function() {
+                    let speed = 400;
+                    let href = $(this).attr("href");
+                    let $target = $(href == "#" || href == "" ? 'html' : href);
+                    let position = $target.offset().top - 100;
+                    $('body,html').animate({
+                        scrollTop: position
+                    }, speed, 'swing');
+                    return false;
+                });
+            };
 
-        window.onload = function() {
-            $('.mainKv').animate({
-                'opacity': '1'},800);
-                setTimeout(function() {
-                    $('.mainKv_title').stop().fadeIn(2500);
+            let unlockCheckBox = function() {
+                let $trigger = $('.header_navi a');
+                let $target = $('input[type="checkbox"]');
+                $trigger.click(function() {
+                    $target.prop('checked', false);
+                });
+            };
 
-                }, 1200);
-        };
+            window.onload = function() {
+                $('.mainKv').animate({
+                    'opacity': '1'},800);
+                    setTimeout(function() {
+                        $('.mainKv_title').stop().fadeIn(2500);
+                    }, 1200);
+            };
 
-        
-      
+
             runScroll();
             unlockCheckBox();
         });
