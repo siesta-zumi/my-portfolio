@@ -691,10 +691,75 @@ p.my_name {
         height: 500px;
     }
 
+    .sns_cat {
+        height: 1000px;
+    }
+
+    .sns_mask {
+        height: 100%;
+        width: 100%;
+        background: rgba(238, 156, 5, 0.4);
+        
+    }
+    
+    .sns_container {
+        width: 70%;
+        height: 10px;
+        color: #fff;
+    }
+    
+    .sns_area {
+        
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sns-icon img {
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .sns_item {
+        width: 90%;
+        color: #fff;
+        border: solid 2px #fff;
+        margin: 10px auto;
+    }
+    
+    .sns_item .title {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    
+
 
     .contact .mainContent_inner {
-        padding: 0 24px;
-       
+        background-color: lightgray;
+        padding: 50px;
+        width: 90%;
+    
+    }
+    
+    .contact .contact_item {
+        margin-bottom: 40px;
+    }
+    
+    .contact_text {
+        margin: 0 auto;
+        width: 80%;
+        
+    }
+    
+    .contact li {
+        margin-top: 10px;
     }
 
 
