@@ -148,7 +148,7 @@ p {
     font-size: 3rem;
     color: #fff;
     background: radial-gradient(yellow, rgb(252, 39, 11,.9)); 
-    padding: 20px;
+    padding: 20px 50px; 
     text-shadow: 10px 10px 5px #000 ;
     display: none;
 }
@@ -381,7 +381,8 @@ p {
 
 .contact_text {
     margin: 0 auto;
-    width: 70%;
+    width: 35%;
+    
 }
 
 .contact li {
